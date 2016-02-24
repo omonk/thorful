@@ -19,12 +19,12 @@ App.directive('repoItem', function () {
 
 App.controller('formController', function($scope, $http) {
         $scope.$watch('search', function(initialVal, newVal) {
-            if(newVal !== initialVal) {
+            // if(newVal !== initialVal) {
                 fetchRepos();
-            }
+            // }
         })
 
-        $scope.search = '';
+        $scope.search = 'Bootstrap';
 
         $scope.details = null;
 

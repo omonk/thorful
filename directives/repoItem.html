@@ -1,20 +1,25 @@
-<div class="repo__list" ng-repeat="repo in details.items">
+<div class="row repo__list" ng-repeat="repo in details.items">
 
-    <h2 class="repo__name">{{repo.name}}</h2>
-    <h3 class="repo__user">From: {{repo.owner.login}}</h3>
-    <p>Description: {{repo.description}}</p>
-    <p>Forks: {{repo.forks_count}}</p>
-    <p><a href="{{repo.stargazers_url}}">Number of Stargazers:{{repo.stargazers_count}}</a></p>
-    <p><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Open Issues:{{repo.open_issues_count}}</p>
-    <button ng-click="fetchRepoIssues(repo.owner.login, repo.name)">Show issues</button>
+    <h2 class="col-sm-8 repo__name">{{repo.name}}</h2>
+    <h3 class="col-sm-4 repo__user">from: {{repo.owner.login}}</h3>
 
-    <section class="repo__issues">
-        <ul>
-            <li ng-repeat="item in repoIssues">
-                <p><a href="{{item.html_url}}">{{item.title}}</a></p>
-                <span>{{item.comments}}</span>
-            </li>
-        </ul>
-    </section>
+    <div class="col-xs-12">
+        <p>Description: {{repo.description}}</p>
+        <p>Forks: {{repo.forks_count}}</p>
+        <p><a href="{{repo.stargazers_url}}">Number of Stargazers:{{repo.stargazers_count}}</a></p>
+        <p><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Open Issues:{{repo.open_issues_count}}</p>
+        <button class="btn default" ng-click="fetchRepoIssues(repo.owner.login, repo.name)">Show issues</button>
+    </div>
+
+    <div class="col-xs-12">
+        <section class="repo__issues">
+            <ul class="list-unstyled">
+                <li ng-repeat="item in repoIssues">
+                    <p><a href="{{item.html_url}}">{{item.title}}</a></p>
+                    <span>{{item.comments}}</span>
+                </li>
+            </ul>
+        </section>
+    </div>
 
 </div>
