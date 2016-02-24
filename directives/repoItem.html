@@ -6,7 +6,7 @@
     <div class="col-xs-12">
         <p>Description: {{repo.description}}</p>
         <p>Forks: {{repo.forks_count}}</p>
-        <p><a href="{{repo.stargazers_url}}">Number of Stargazers:{{repo.stargazers_count}}</a></p>
+        <p><a href="{{repo.stargazers_url}}"> Number of Stargazers:{{repo.stargazers_count}}</a></p>
         <p><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Open Issues:{{repo.open_issues_count}}</p>
         <button class="btn default" ng-click="fetchRepoIssues(repo.owner.login, repo.name)">Show issues</button>
     </div>
