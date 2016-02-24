@@ -1,24 +1,29 @@
-var App = angular.module('App', []);
+'use strict';
 
-
-function formController($scope, $http) {
-    $scope.formData = {};
-
-
-    $scope.formSubmit = function() {
-        $http({
-            method: POST,
-            url: '',
-            data : $.param($scope.formData),
-            headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
-        }).success(function(data) {
-            console.log(data);
-
-            if (!data.success) {
-
-            } else {
-
+angular.module('App', [])
+    .controller('formController', function($scope, $http) {
+        $scope.$watch('search', function(initialVal, newVal) {
+            if(newVal !== initialVal) {
+                fetch();
             }
         })
-    }
-}
+
+        $scope.search = '';
+
+        $scope.details = null;
+
+        function fetch() {
+            $http.get('https://api.github.com/search/repositories?q=' + $scope.search)
+            .then(function(response) {
+                $scope.details = response.data
+            })
+        }
+
+        $scope.update = function(repo) {
+            $scope.search = repo.name;
+        }
+
+        // $scope.select = function () {
+        //     this.setSel
+        // }
+    })
