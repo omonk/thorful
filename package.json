@@ -1,0 +1,27 @@
+{
+  "name": "thortful",
+  "version": "1.0.0",
+  "description": "Personal site",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omonk/thortful.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omonk/thortful/issues"
+  },
+  "homepage": "https://github.com/omonk/thortful#readme",
+  "dependencies": {
+    "body-parser": "~1.0.1",
+    "express": "~4.0.0",
+    "mongoose": "~3.6.13"
+  },
+  "devDependencies": {
+    
+  }
+}

@@ -8,24 +8,13 @@
     <body>
         <div class="App container">
 
-                <div class="row">
-                    <h1 class="text-center">Repo Seach</h1>
-                    <div class="col-xs-12 col-s-8 col-s-offset-2">
-                        <input class="form-control" type="text" name="name" ng-model="search" placeholder="Repo name...">
-                    </div>
-                </div>
+                <search-bar></search-bar>
 
                 <div class="loader" ng-if="!details">
-
+                    <p>Enter a repo name above!</p>
                 </div>
-                <div class="repo__list" ng-if="details.items" ng-repeat="repo in details.items">
-                    <h2 class="repo__name">{{repo.name}}</h2>
-                    <p>Description: {{repo.description}}</p>
-                    <p>Forks: {{repo.forks_count}}</p>
-                    <p><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> Open Issues: {{repo.open_issues_count}}</p>
-                    <a href="{{repo.stargazers_url}}">Number of Stargazers: {{repo.stargazers_count}}</a>
 
-                </div>
+                <div ng-if="details" repo-item item=""></div>
 
         </div>
 
